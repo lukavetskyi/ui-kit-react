@@ -6,7 +6,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   content?: "text" | "icon" | "text-icon",
   size?: "normal" | "big",
   btnType?: "primary" | "secondary" | "outline" | "text",
-  color?: "primary" | "danger" | "warning" | "info" | "success"
+  color?: "primary" | "danger" | "warning" | "info" | "success",
+  disabled?: boolean;
 }
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({

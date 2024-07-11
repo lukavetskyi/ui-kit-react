@@ -1,41 +1,28 @@
 .common {
   font-family: var(--font-inter);
   font-weight: var(--fw-medium);
+
   border: none;
   border-radius: 4px;
+  outline: 1px solid transparent;
+
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  transition-property: color, outline-color, background-color;
 }
 
 .normal {
   font-size: var(--fs-regular);
   line-height: var(--lh-regular);
 
-  &.text {
-    text-align: center;
-    padding: 8px 16px;
+  &.icon>svg {
+    width: 20px;
+    height: 20px;
   }
 
-  &.icon {
-    padding: 8px;
-    display: grid;
-    place-items: center;
-
-    &>svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  &.text-icon {
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-
-    &>svg {
-      width: 16px;
-      height: 16px;
-    }
+  &.text-icon>svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -43,396 +30,161 @@
   font-size: var(--fs-medium);
   line-height: var(--lh-medium);
 
-  &.text {
-    text-align: center;
-    padding: 8px 16px;
+  &.icon>svg {
+    width: 24px;
+    height: 24px;
   }
 
-  &.icon {
-    padding: 8px;
-    display: grid;
-    place-items: center;
-
-    &>svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  &.text-icon {
-    padding: 8px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-
-    &>svg {
-      width: 20px;
-      height: 20px;
-    }
+  &.text-icon>svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
+.text {
+  text-align: center;
+  padding: 8px 16px;
+
+}
+
+.text-icon {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.icon {
+  padding: 8px;
+  display: grid;
+  place-items: center;
+}
+
+
+.color-primary {
+  --main-color: var(--primary-main-color);
+  --hover-color: var(--primary-hover-color);
+  --pressed-color: var(--primary-pressed-color);
+  --focus-color: var(--primary-focus-color);
+  --secondary-color: var(--primary-secondary-color);
+  --border-color: var(--primary-border-color);
+}
+
+.color-danger {
+  --main-color: var(--danger-main-color);
+  --hover-color: var(--danger-hover-color);
+  --pressed-color: var(--danger-pressed-color);
+  --focus-color: var(--danger-focus-color);
+  --secondary-color: var(--danger-secondary-color);
+  --border-color: var(--danger-border-color);
+}
+
+.color-warning {
+  --main-color: var(--warning-main-color);
+  --hover-color: var(--warning-hover-color);
+  --pressed-color: var(--warning-pressed-color);
+  --focus-color: var(--warning-focus-color);
+  --secondary-color: var(--warning-secondary-color);
+  --border-color: var(--warning-border-color);
+}
+
+.color-info {
+  --main-color: var(--info-main-color);
+  --hover-color: var(--info-hover-color);
+  --pressed-color: var(--info-pressed-color);
+  --focus-color: var(--info-focus-color);
+  --secondary-color: var(--info-secondary-color);
+  --border-color: var(--info-border-color);
+}
+
+.color-success {
+  --main-color: var(--success-main-color);
+  --hover-color: var(--success-hover-color);
+  --pressed-color: var(--success-pressed-color);
+  --focus-color: var(--success-focus-color);
+  --secondary-color: var(--success-secondary-color);
+  --border-color: var(--success-border-color);
+}
 
 .type-primary {
   color: var(--neutral-10-color);
-  transition: background-color .3s linear;
+  background-color: var(--main-color);
 
-  &.color-primary {
-    background-color: var(--primary-main-color);
-
-    &:hover:enabled {
-      background-color: var(--primary-hover-color);
-    }
-
-    &:active:enabled {
-      background-color: var(--primary-pressed-color);
-    }
-
-    &:focus {
-      outline: 2px solid var(--primary-focus-color);
-    }
+  &:hover:enabled {
+    background-color: var(--hover-color);
   }
 
-  &.color-danger {
-    background-color: var(--danger-main-color);
-
-    &:hover:enabled {
-      background-color: var(--danger-hover-color);
-    }
-
-    &:active:enabled {
-      background-color: var(--danger-pressed-color);
-    }
-
-    &:focus {
-      outline: 2px solid var(--danger-focus-color);
-    }
+  &:active:enabled {
+    background-color: var(--pressed-color);
   }
 
-  &.color-warning {
-    background-color: var(--warning-main-color);
-
-    &:hover:enabled {
-      background-color: var(--warning-hover-color);
-    }
-
-    &:active:enabled {
-      background-color: var(--warning-pressed-color);
-    }
-
-    &:focus {
-      outline: 2px solid var(--warning-focus-color);
-    }
+  &:focus {
+    outline: 2px solid var(--focus-color);
   }
 
-  &.color-info {
-    background-color: var(--info-main-color);
-
-    &:hover:enabled {
-      background-color: var(--info-hover-color);
-    }
-
-    &:active:enabled {
-      background-color: var(--info-pressed-color);
-    }
-
-    &:focus {
-      outline: 2px solid var(--info-focus-color);
-    }
-  }
-
-  &.color-success {
-    background-color: var(--success-main-color);
-
-    &:hover:enabled {
-      background-color: var(--success-hover-color);
-    }
-
-    &:active:enabled {
-      background-color: var(--success-pressed-color);
-    }
-
-    &:focus {
-      outline: 2px solid var(--success-focus-color);
-    }
-  }
-}
-
-.type-primary,
-.type-secondary {
-  &:disabled {
-    background-color: var(--neutral-20-color);
-    color: var(--neutral-50-color);
-  }
 }
 
 .type-secondary,
 .type-outline {
-  transition-duration: .3s;
-  transition-timing-function: linear;
-  transition-property: color outline;
+  color: var(--main-color);
+  background-color: var(--secondary-color);
 
-  &.color-primary {
-    color: var(--primary-main-color);
-    background-color: var(--primary-secondary-color);
-
-    &:hover:enabled {
-      color: var(--primary-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--primary-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--primary-focus-color);
-    }
+  &:hover:enabled {
+    color: var(--hover-color);
   }
 
-  &.color-danger {
-    color: var(--danger-main-color);
-    background-color: var(--danger-secondary-color);
-
-    &:hover:enabled {
-      color: var(--danger-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--danger-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--danger-focus-color);
-    }
+  &:active:enabled {
+    color: var(--pressed-color);
   }
 
-  &.color-warning {
-    color: var(--warning-main-color);
-    background-color: var(--warning-secondary-color);
-
-    &:hover:enabled {
-      color: var(--warning-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--warning-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--warning-focus-color);
-    }
-  }
-
-  &.color-info {
-    color: var(--info-main-color);
-    background-color: var(--info-secondary-color);
-
-    &:hover:enabled {
-      color: var(--info-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--info-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--info-focus-color);
-    }
-  }
-
-  &.color-success {
-    color: var(--success-main-color);
-    background-color: var(--success-secondary-color);
-
-    &:hover:enabled {
-      color: var(--success-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--success-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--success-focus-color);
-    }
+  &:focus {
+    outline: 1px solid var(--focus-color);
   }
 }
 
 .type-outline {
-  &.color-primary {
-    outline: 1px solid var(--primary-border-color);
+  outline: 1px solid var(--border-color);
 
-    &:hover:enabled {
-      outline-color: var(--primary-hover-color);
-    }
-
-    &:active:enabled {
-      outline-color: var(--primary-pressed-color);
-    }
-
-    &:focus {
-      outline-color: var(--primary-focus-color);
-    }
+  &:hover:enabled {
+    outline-color: var(--hover-color);
   }
 
-  &.color-danger {
-    outline: 1px solid var(--danger-border-color);
-
-    &:hover:enabled {
-      outline-color: var(--danger-hover-color);
-    }
-
-    &:active:enabled {
-      outline-color: var(--danger-pressed-color);
-    }
-
-    &:focus {
-      outline-color: var(--danger-focus-color);
-    }
+  &:active:enabled {
+    outline-color: var(--pressed-color);
   }
 
-  &.color-warning {
-    outline: 1px solid var(--warning-border-color);
-
-    &:hover:enabled {
-      outline-color: var(--warning-hover-color);
-    }
-
-    &:active:enabled {
-      outline-color: var(--warning-pressed-color);
-    }
-
-    &:focus {
-      outline-color: var(--warning-focus-color);
-    }
+  &:focus {
+    outline-color: var(--focus-color);
   }
-
-  &.color-info {
-    outline: 1px solid var(--info-border-color);
-
-    &:hover:enabled {
-      outline-color: var(--info-hover-color);
-    }
-
-    &:active:enabled {
-      outline-color: var(--info-pressed-color);
-    }
-
-    &:focus {
-      outline-color: var(--info-focus-color);
-    }
-  }
-
-  &.color-success {
-    outline: 1px solid var(--success-border-color);
-
-    &:hover:enabled {
-      outline-color: var(--success-hover-color);
-    }
-
-    &:active:enabled {
-      outline-color: var(--success-pressed-color);
-    }
-
-    &:focus {
-      outline-color: var(--success-focus-color);
-    }
-  }
-}
-
-.type-outline:disabled {
-  background-color: var(--neutral-20-color);
-  color: var(--neutral-50-color);
-  outline: 1px solid var(--neutral-40-color);
 }
 
 .type-text {
-  transition-duration: .3s;
-  transition-timing-function: linear;
-  transition-property: color outline;
-
   background-color: transparent;
+  color: var(--main-color);
 
-  &.color-primary {
-    color: var(--primary-main-color);
-
-    &:hover:enabled {
-      color: var(--primary-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--primary-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--primary-focus-color);
-    }
+  &:hover:enabled {
+    color: var(--hover-color);
   }
 
-  &.color-danger {
-    color: var(--danger-main-color);
-
-    &:hover:enabled {
-      color: var(--danger-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--danger-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--danger-focus-color);
-    }
+  &:active:enabled {
+    color: var(--pressed-color);
   }
 
-  &.color-warning {
-    color: var(--warning-main-color);
-
-    &:hover:enabled {
-      color: var(--warning-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--warning-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--warning-focus-color);
-    }
+  &:focus {
+    outline: 1px solid var(--focus-color);
   }
+}
 
-  &.color-info {
-    color: var(--info-main-color);
+.type-primary:disabled,
+.type-secondary:disabled,
+.type-outline:disabled {
+  background-color: var(--neutral-20-color);
+  color: var(--neutral-50-color);
+}
 
-    &:hover:enabled {
-      color: var(--info-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--info-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--info-focus-color);
-    }
-  }
-
-  &.color-success {
-    color: var(--success-main-color);
-
-    &:hover:enabled {
-      color: var(--success-hover-color);
-    }
-
-    &:active:enabled {
-      color: var(--success-pressed-color);
-    }
-
-    &:focus {
-      outline: 1px solid var(--success-focus-color);
-    }
-  }
+.type-outline:disabled {
+  outline: 1px solid var(--neutral-40-color);
 }
 
 .type-text:disabled {
