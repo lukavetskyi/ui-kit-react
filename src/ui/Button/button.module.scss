@@ -61,52 +61,6 @@
   place-items: center;
 }
 
-
-.color-primary {
-  --main-color: var(--primary-main-color);
-  --hover-color: var(--primary-hover-color);
-  --pressed-color: var(--primary-pressed-color);
-  --focus-color: var(--primary-focus-color);
-  --secondary-color: var(--primary-secondary-color);
-  --border-color: var(--primary-border-color);
-}
-
-.color-danger {
-  --main-color: var(--danger-main-color);
-  --hover-color: var(--danger-hover-color);
-  --pressed-color: var(--danger-pressed-color);
-  --focus-color: var(--danger-focus-color);
-  --secondary-color: var(--danger-secondary-color);
-  --border-color: var(--danger-border-color);
-}
-
-.color-warning {
-  --main-color: var(--warning-main-color);
-  --hover-color: var(--warning-hover-color);
-  --pressed-color: var(--warning-pressed-color);
-  --focus-color: var(--warning-focus-color);
-  --secondary-color: var(--warning-secondary-color);
-  --border-color: var(--warning-border-color);
-}
-
-.color-info {
-  --main-color: var(--info-main-color);
-  --hover-color: var(--info-hover-color);
-  --pressed-color: var(--info-pressed-color);
-  --focus-color: var(--info-focus-color);
-  --secondary-color: var(--info-secondary-color);
-  --border-color: var(--info-border-color);
-}
-
-.color-success {
-  --main-color: var(--success-main-color);
-  --hover-color: var(--success-hover-color);
-  --pressed-color: var(--success-pressed-color);
-  --focus-color: var(--success-focus-color);
-  --secondary-color: var(--success-secondary-color);
-  --border-color: var(--success-border-color);
-}
-
 .type-primary {
   color: var(--neutral-10-color);
   background-color: var(--main-color);
