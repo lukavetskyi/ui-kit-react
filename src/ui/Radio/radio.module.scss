@@ -1,0 +1,30 @@
+.radio {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--neutral-10-color);
+  border: 1px solid var(--neutral-50-color);
+  border-radius: 50%;
+
+  transition-duration: .3s;
+  transition-property: border, background-color, outline;
+  transition-timing-function: linear;
+
+  &:hover:enabled {
+    border-color: var(--hover-color);
+  }
+
+  &:focus {
+    border-color: var(--hover-color);
+    outline: 2px solid var(--focus-color);
+  }
+
+  &:checked {
+    background-color: var(--main-color);
+    box-shadow: inset 0px 0px 0px 3px var(--neutral-10-color);
+
+    &:disabled {
+      background-color: var(--neutral-50-color);
+    }
+  }
+}
