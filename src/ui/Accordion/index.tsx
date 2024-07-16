@@ -4,23 +4,23 @@ import cls from './accordion.module.scss'
 
 export interface AccordionProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   title: string,
-  isOpenDefault?: boolean,
+  open?: boolean,
 }
 
 export const Accordion: FC<PropsWithChildren<AccordionProps>> = ({
   title,
-  isOpenDefault = false,
+  open = false,
   className = '',
   children,
   ...props
 }) => {
-  const [open, setOpen] = useState<boolean>(isOpenDefault);
+  const [openAccordion, setOpenAccordion] = useState<boolean>(open);
 
-  useEffect(() => { setOpen(isOpenDefault) }, [isOpenDefault])
+  useEffect(() => { setOpenAccordion(open) }, [open])
 
-  const toggleAccordion = () => setOpen(prev => !prev)
+  const toggleAccordion = () => setOpenAccordion(prev => !prev)
 
-  const openStyle = open ? cls.open : cls.close
+  const openStyle = openAccordion ? cls.open : cls.close
 
   const styles = [
     cls.accordion,
