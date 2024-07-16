@@ -9,6 +9,10 @@
   transition-duration: .3s;
   transition-timing-function: linear;
   transition-property: color, outline-color, background-color;
+
+  &:enabled{
+    cursor:pointer;
+  }
 }
 
 .normal {

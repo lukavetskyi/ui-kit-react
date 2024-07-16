@@ -10,6 +10,10 @@
   transition-property: border, background-color, outline;
   transition-timing-function: linear;
 
+  &:enabled{
+    cursor:pointer;
+  }
+  
   &:hover:enabled {
     border-color: var(--hover-color);
   }
