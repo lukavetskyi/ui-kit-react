@@ -1,0 +1,40 @@
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.option {
+  width: 100%;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  background-color: var(--neutral-10-color);
+
+  transition: .3s background-color linear,
+  .3s color linear,
+  .3s outline linear;
+
+  &.cb {
+    justify-content: center;
+  }
+
+  &:hover:enabled {
+    background-color: var(--neutral-20-color);
+  }
+
+  &:focus {
+    outline: 3px solid var(--focus-color);
+    background-color: var(--neutral-20-color);
+  }
+
+  &:active:enabled {
+    color: var(--pressed-color);
+  }
+
+  &:disabled {
+    background-color: var(--neutral-10-color);
+    color: var(--neutral-60-color);
+  }
+}
