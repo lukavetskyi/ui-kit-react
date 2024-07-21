@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 export interface DropdownOptionProps {
   text: string
   checkbox?: boolean
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onClick?: (e: ChangeEvent<HTMLInputElement>) => void
   checkedState?: boolean,
   disabled?: boolean
 }
@@ -17,15 +17,15 @@ export const DropdownOption: FC<DropdownOptionProps> = ({
   checkbox = false,
   checkedState = false,
   disabled = false,
-  onChange = () => { }
+  onClick = () => { }
 }) => {
   const [checked, setChecked] = useState<boolean>(checkedState)
 
   useEffect(() => { setChecked(checkedState) }, [checkedState])
 
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const onClickHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setChecked(e.target.checked);
-    onChange(e);
+    onClick(e);
   }
 
   const styles = [
@@ -34,7 +34,7 @@ export const DropdownOption: FC<DropdownOptionProps> = ({
   ].join(' ')
 
   const id = checkbox ? uuidv4() : '';
-  const cb = checkbox ? <Checkbox className={cls.checkbox} checked={checked} onChange={onChangeHandler} id={id} /> : <></>;
+  const cb = checkbox ? <Checkbox className={cls.checkbox} checked={checked} onChange={onClickHandler} id={id} /> : <></>;
 
   return <button disabled={disabled} className={styles}>
     {cb}<Label htmlFor={id}>{text}</Label>
