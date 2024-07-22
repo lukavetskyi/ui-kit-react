@@ -1,0 +1,29 @@
+.select {
+  appearance: none;
+
+  height: 32px;
+  width: 256px;
+
+  border-radius: 4px;
+  border: 1px solid var(--neutral-40-color);
+  background-color: var(--neutal-10-color);
+  padding: 6px 12px;
+
+  font-family: var(--font-inter);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-regular);
+
+  color: var(--neutral-70-color);
+}
+
+
+.wrapper {
+  position: relative;
+
+  &>svg{
+    position: absolute;
+    top: 8px;
+    right: 12px;  
+  }
+}
