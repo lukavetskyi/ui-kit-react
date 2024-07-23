@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  gap: 6px;
+
+  &>svg {
+    width: 26px;
+    height: 25px;
+    color:var(--neutral-30-color);
+
+    &.selected{
+      color: var(--warning-main-color);
+    }
+  }
+}
