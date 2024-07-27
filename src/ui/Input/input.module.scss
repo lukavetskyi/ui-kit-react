@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+
+  &>input {
+    width: 256px;
+    height: 32px;
+    padding: 6px 12px;
+    padding-right: 30px;
+    border-radius: 4px;
+    border: 1px solid var(--neutral-50-color);
+    background-color: var(--neutral-10-color);
+    color: var(--neutral-90-color);
+
+    transition: .3s border-color linear,
+      .3s outline linear,
+      .3s background-color linear;
+
+    &,
+    &::placeholder {
+      font-size: var(--fs-regular);
+      font-weight: var(--fw-regular);
+      font-family: var(--font-inter);
+      line-height: var(--lh-regular);
+    }
+
+    &::placeholder {
+      color: var(--neutral-70-color);
+    }
+
+    &:hover:enabled {
+      border-color: var(--hover-color);
+    }
+
+    &:focus {
+      outline: 3px solid var(--focus-color)
+    }
+
+    &:disabled {
+      color: var(--neutral-60-color);
+      background-color: var(--neutral-20-color);
+    }
+  }
+
+  &>span {
+    color: var(--main-color);
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-regular);
+    font-family: var(--font-inter);
+    line-height: var(--lh-regular);
+    
+    transition: .3s border-color linear,
+      .3s outline linear,
+      .3s background-color linear;
+  }
+
+  &.primary>span {
+    color: var(--neutral-60-color);
+  }
+
+  &>svg {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+
+    color: var(--main-color);
+    
+    transition: .3s border-color linear,
+      .3s outline linear,
+      .3s background-color linear;
+  }
+
+  &.primary>svg {
+    color: var(--neutral-70-color)
+  }
+}
