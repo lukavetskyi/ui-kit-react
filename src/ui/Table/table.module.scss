@@ -1,0 +1,32 @@
+.table {
+  background-color: var(--neutral-10-color);
+  border-spacing: 0;
+
+  th {
+    background-color: var(--neutral-20-color);
+
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-medium);
+    font-family: var(--font-inter);
+    line-height: var(--lh-regular);
+
+    padding: 8px 16px;
+  }
+
+  td {
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-regular);
+    font-family: var(--font-inter);
+    line-height: var(--lh-regular);
+
+    padding: 8px 16px;
+  }
+
+  tr{
+    transition: .3s background-color linear;
+  }
+
+  tr:has(td>input:checked) {
+    background-color: var(--secondary-color);
+  }
+}
