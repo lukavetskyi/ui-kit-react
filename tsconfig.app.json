@@ -24,12 +24,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ],
       "#/*": [
-        "./assets/*"
+        "./src/assets/*"
+      ],
+      "@phosphor-icons/react": [
+        "node_modules/@phosphor-icons/react/dist/index"
       ]
     }
   },
